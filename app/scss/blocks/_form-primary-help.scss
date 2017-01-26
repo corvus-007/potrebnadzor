@@ -1,0 +1,62 @@
+.form-primary-help {
+
+}
+
+.form-primary-help__control,
+.form-primary-help__control:hover,
+.form-primary-help__control:focus {
+  border-color: transparent;
+  background-color: transparent;
+  // outline: 2px solid #af8;
+  padding: 0;
+}
+
+.form-primary-help__textarea {
+  font-size: rem(18);
+  line-height: rem(50);
+  // background-origin: content-box;
+  background-attachment: local;
+  background-clip: content-box;
+  background-image: linear-gradient(to bottom, transparent calc(100% - 1px), $light-color 0);
+  background-repeat: repeat;
+  background-size: 100% rem(50);
+  background-position: 0 rem(50 - 10);
+}
+
+.form-primary-help__input {
+  font-size: inherit;
+  padding: 0;
+  max-width: none;
+  min-width: 0;
+  width: 15ex;
+}
+
+.form-primary-help__group-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: rem(60);
+  font-weight: 500;
+}
+
+.form-primary-help__control-addon {
+  color: $muted-color;
+  margin-right: 0.2em;
+}
+
+.form-primary-help__note {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 450px;
+  font-size: rem(12);
+  text-align: center;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  b {
+    font-weight: 600;
+    color: $accent-color;
+  }
+}

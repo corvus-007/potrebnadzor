@@ -1,0 +1,36 @@
+@import "normalize";
+
+@import "variables";
+@import "functions";
+@import "mixins";
+
+// Global
+@import "global/fonts";
+@import "global/response-utillity";
+@import "global/grid";
+@import "global/base";
+
+// Vendors
+@import "vendors/slick";
+@import "vendors/magnific-popup";
+
+// Blocks
+@import "blocks/icon";
+@import "blocks/button";
+@import "blocks/form";
+@import "blocks/form-primary-help";
+@import "blocks/table";
+@import "blocks/popup";
+@import "blocks/main-header";
+@import "blocks/main-nav";
+@import "blocks/hamburger-menu";
+@import "blocks/primary";
+@import "blocks/primary-logo";
+@import "blocks/primary-help";
+@import "blocks/primary-help-steps";
+@import "blocks/primary-call";
+@import "blocks/index-slider";
+@import "blocks/page";
+// @import "blocks/archive-events";
+@import "blocks/main-footer";
+@import "blocks/socials";

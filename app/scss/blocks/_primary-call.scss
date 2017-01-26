@@ -1,0 +1,15 @@
+.primary-call {
+  margin: 0;
+  text-align: center;
+  font-family: $secondary-font;
+
+  [href^="tel:"] {
+    font-size: rem(30);
+    font-weight: 600;
+    color: $accent-color;
+  }
+
+  span {
+    color: $muted-color;
+  }
+}

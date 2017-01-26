@@ -1,0 +1,49 @@
+.primary-help {
+  margin-left: 8%;
+  margin-right: 8%;
+  padding: rem(35) rem(110) rem(70);
+  position: relative;
+  border: 4px solid $light-color;
+}
+
+.primary-help-actions-holder {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1.7rem;
+  text-align: center;
+}
+
+.primary-help-actions {
+  display: inline-flex;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #fff;
+}
+
+.primary-help-action {
+  @include createButton();
+  overflow: hidden;
+  transition: 0.3s linear;
+
+  &--visible {
+    
+  }
+}
+
+.primary-help-action-step-prev {
+
+  &--hidden {
+    width: 0;
+    border-width: 0;
+    padding: 0;
+  }
+}
+
+.primary-help-action-step-next {
+  @include buttonColor($accent-color, #fff);
+
+  &--completed {
+    background-color: #3de;
+  }
+}

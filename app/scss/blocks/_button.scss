@@ -1,0 +1,66 @@
+@mixin buttonColor($bgColor: $buttonColorDefault, $textColor: #fff) {
+
+  color: $textColor;
+  background-color: $bgColor;
+
+  &:hover,
+  &:focus {
+    color: $textColor;
+    background-color: mix(#fff, $bgColor, 10%);
+    outline: none;
+  }
+
+  &:active {
+    color: $textColor;
+    background-color: mix(#000, $bgColor, 10%);
+  }
+}
+
+@mixin createButton() {
+  @include border-rounded();
+  display: inline-block;
+  padding: em(13, 18) em(33, 18);
+  border: 2px solid transparent;
+  text-align: center;
+  font-family: $secondary-font;
+  font-size: rem(18);
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: normal;
+  outline: none;
+  user-select: none;
+  box-sizing: border-box;
+  transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+.button {
+  @include createButton();
+  @include buttonColor($accent-color, #fff);
+
+  &--small {
+    font-size: rem(15);
+    padding: em(14, 15) em(25, 15);
+  }
+}
+
+.button__icon + .button__text,
+.button__text + .button__icon {
+  margin-left: 0.5em;
+}
+
+.button__icon,
+.button__text {
+  vertical-align: middle;
+}
+
+.button-gray {
+  @include createButton();
+  @include buttonColor($light-color, $base-color);
+}
+
+.button--has-icon {
+  display: inline-block;
+  white-space: nowrap;
+}
