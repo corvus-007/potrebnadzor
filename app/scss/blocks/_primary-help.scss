@@ -1,8 +1,7 @@
 .primary-help {
-  margin-left: 8%;
-  margin-right: 8%;
-  padding: rem(35) rem(110) rem(70);
   position: relative;
+  padding: 1rem;
+  padding-bottom: 2rem;
   border: 4px solid $light-color;
 }
 
@@ -10,28 +9,45 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -1.7rem;
+  bottom: -1.3rem;
   text-align: center;
 }
 
 .primary-help-actions {
   display: inline-flex;
-  padding-left: 15px;
-  padding-right: 15px;
   background-color: #fff;
 }
 
 .primary-help-action {
   @include createButton();
+  position: relative;
   overflow: hidden;
   transition: 0.3s linear;
+}
 
-  &--visible {
-    
+.primary-help-actions__slider {
+  display: flex;
+  width: rem(170);
+  overflow: hidden;
+}
+
+.primary-help-actions__slide {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 100%;
+  flex-shrink: 0;
+  transform: translateX(-100%);
+  transition: 0.3s linear;
+
+  .primary-help-actions--finish & {
+    transform: translateX(0%);
   }
 }
 
+
+
 .primary-help-action-step-prev {
+  @include buttonColor($light-color, $base-color);
 
   &--hidden {
     width: 0;
@@ -42,8 +58,49 @@
 
 .primary-help-action-step-next {
   @include buttonColor($accent-color, #fff);
+}
 
-  &--completed {
-    background-color: #3de;
+.primary-help-action-step-finish {
+  @include buttonColor($accent-color, #fff);
+}
+
+
+
+@media (max-width: $media-mobile-down) {
+  .primary-help-action {
+    font-size: rem(15);
+  }
+}
+
+@media (min-width: $media-mobile-up) {
+
+  .primary-help-actions-holder {
+    bottom: -1.5rem;
+  }
+
+  .primary-help-actions {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .primary-help-actions__slider {
+    width: rem(190);
+  }
+}
+
+
+@media (min-width: $media-tablet-up) {
+  .primary-help {
+    margin-left: 8%;
+    margin-right: 8%;
+    padding: rem(35) rem(110) rem(70);
+  }
+
+  .primary-help-actions-holder {
+    bottom: -1.7rem;
+  }
+
+  .primary-help-actions__slider {
+    width: rem(210);
   }
 }

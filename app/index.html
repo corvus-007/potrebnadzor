@@ -25,7 +25,7 @@
         </div>
         <div class="primary__row">
           <div class="primary-help">
-            <form class="form-primary-help" name="form-primary-help" action="">
+            <form class="form-primary-help" id="form-primary-help" name="form-primary-help" action="">
               <div class="primary-help-steps">
                 <div class="primary-help-step">
                   <div class="primary-help-step__headline">
@@ -33,11 +33,11 @@
                     <p class="primary-help-step__subtitle">Опишите проблему и мы поможем с ее решением</p>
                   </div>
                   <textarea
-                    class="form-primary-help__textarea form-primary-help__control form-control"
-                    name="help-message"
-                    id="field-help-message"
-                    placeholder="Например, меня обманул продавец бытовой техники и продал мне сломанный товар"
-                    required></textarea>
+                  class="form-primary-help__textarea form-primary-help__control form-control"
+                  name="help-message"
+                  id="field-help-message"
+                  placeholder="Например, меня обманул продавец бытовой техники и продал мне сломанный товар"
+                  required></textarea>
                 </div>
                 <div class="primary-help-step">
                   <div class="primary-help-step__headline">
@@ -47,11 +47,11 @@
                   <div class="form-primary-help__group-input">
                     <div class="form-primary-help__control-addon">+7</div>
                     <input
-                      class="form-primary-help__input form-primary-help__control form-control"
-                      type="tel"
-                      name="help-phone"
-                      id="field-help-phone"
-                      required>
+                    class="form-primary-help__input form-primary-help__control form-control"
+                    type="tel"
+                    name="help-phone"
+                    id="field-help-phone"
+                    required>
                   </div>
                   <div class="form-primary-help__note">
                     <p><b>Внимание!</b> Пожалуйста, проверьте правильность номера телефона перед отправкой. Именно на него вам перезвонит наш юрист, чтобы проконсультировать по решению вашей проблемы.</p>
@@ -62,20 +62,25 @@
             <div class="primary-help-actions-holder">
               <div class="primary-help-actions">
                 <button class="primary-help-action primary-help-action-step-prev button--has-icon" type="button">
-                  <svg class="svg-icon button__icon">
+                <svg class="svg-icon button__icon">
                     <use xlink:href="images/symbols.svg#arrow-prev"></use>
                   </svg>
-                  <span class="button__text">Назад</span>
+                  <span class="button__text hidden-tablet-down">Назад</span>
                 </button>
-                <button class="primary-help-action primary-help-action-step-next button--has-icon" type="button">
-                  <span class="button__text">Пожаловаться</span>
-                  <svg class="svg-icon button__icon">
-                    <use xlink:href="images/symbols.svg#arrow-next"></use>
-                  </svg>
-                  <svg class="svg-icon button__icon">
-                    <use xlink:href="images/symbols.svg#arrow-prev"></use>
-                  </svg>
-                </button>
+                <div class="primary-help-actions__slider">
+                <button class="primary-help-action primary-help-actions__slide primary-help-action-step-finish button--has-icon" type="submit" form="form-primary-help" disabled>
+                    <span class="button__text">Отправить</span>
+                    <svg class="svg-icon button__icon">
+                      <use xlink:href="images/symbols.svg#mail"></use>
+                    </svg>
+                  </button>
+                  <button class="primary-help-action primary-help-actions__slide primary-help-action-step-next button--has-icon" type="button">
+                    <span class="button__text">Пожаловаться</span>
+                    <svg class="svg-icon button__icon">
+                      <use xlink:href="images/symbols.svg#arrow-next"></use>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

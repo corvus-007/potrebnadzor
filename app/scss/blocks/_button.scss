@@ -14,10 +14,15 @@
     color: $textColor;
     background-color: mix(#000, $bgColor, 10%);
   }
+
+  &:disabled {
+    color: $textColor;
+    background-color: desaturate($bgColor, 100%);
+  }
 }
 
 @mixin createButton() {
-  @include border-rounded();
+  // @include border-rounded();
   display: inline-block;
   padding: em(13, 18) em(33, 18);
   border: 2px solid transparent;
@@ -41,7 +46,7 @@
 
   &--small {
     font-size: rem(15);
-    padding: em(14, 15) em(25, 15);
+    padding: rem(14) rem(25);
   }
 }
 

@@ -14,7 +14,6 @@
 .form-primary-help__textarea {
   font-size: rem(18);
   line-height: rem(50);
-  // background-origin: content-box;
   background-attachment: local;
   background-clip: content-box;
   background-image: linear-gradient(to bottom, transparent calc(100% - 1px), $light-color 0);
@@ -28,14 +27,14 @@
   padding: 0;
   max-width: none;
   min-width: 0;
-  width: 15ex;
+  width: 16ex;
 }
 
 .form-primary-help__group-input {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: rem(60);
+  font-size: 8vw;
   font-weight: 500;
 }
 
@@ -58,5 +57,15 @@
   b {
     font-weight: 600;
     color: $accent-color;
+  }
+}
+
+@media (min-width: $media-tablet-up) {
+  .form-primary-help__group-input {
+    font-size: rem(70);
+  }
+
+  .form-primary-help__input {
+    width: 18ex;
   }
 }

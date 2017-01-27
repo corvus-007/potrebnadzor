@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var primaryHelpActions = document.querySelector('.primary-help-actions');
   var primaryHelpActionStepPrev = document.querySelector('.primary-help-action-step-prev');
   var primaryHelpActionStepNext = document.querySelector('.primary-help-action-step-next');
+  var primaryHelpActionStepFinish = document.querySelector('.primary-help-action-step-finish');
   var primaryHelpActionStepPrevWidth = primaryHelpActionStepPrev.offsetWidth;
 
   if (primaryHelpSteps) {
@@ -35,6 +36,17 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
+    $(primaryHelpPhone).on('input', function(event) {
+      var pattern = /\([\d]{3}\) [\d]{3}-[\d]{2}-[\d]{2}/;
+      var result = this.value.match(pattern)
+      if (result != null) {
+        $(primaryHelpActionStepFinish).prop('disabled', false);
+      } else {
+        $(primaryHelpActionStepFinish).prop('disabled', true);
+      }
+    });
+
+
     $(primaryHelpSteps).slick({
       accessibility: false,
       draggable: false,
@@ -45,11 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
       fade: true
     });
 
-    $('#field-help-phone').mask("(999) 999-99-99", {
-      completed: function(){
-        $(primaryHelpActionStepNext).addClass('primary-help-action--completed');
-      }
-    });
+    $(primaryHelpPhone).inputmask("(999) 999-99-99");
 
     function focusingPrimaryControl(control) {
       setTimeout(function() {
@@ -58,16 +66,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function triggerStepStart() {
-      // primaryHelpActionStepPrev.style.cssText = 'width: 0; padding: 0; border-width: 0;';
-      $(primaryHelpActionStepPrev).addClass('primary-help-action--hidden');
+      primaryHelpActionStepPrev.style = '';
+      primaryHelpActionStepPrev.style.cssText = 'width: 0; padding: 0; border-width: 0;';
+      $(primaryHelpActionStepPrev).addClass('primary-help-action-step-prev--hidden');
       $(primaryHelpActions).addClass('primary-help-actions--start');
       $(primaryHelpActions).removeClass('primary-help-actions--finish');
       focusingPrimaryControl(primaryHelpMessage);
     }
 
     function triggerStepFinish() {
-      primaryHelpActionStepPrev.style.cssText = 'width' + primaryHelpActionStepPrevWidth + 'px';
-      $(primaryHelpActionStepPrev).removeClass('primary-help-action--hidden');
+      primaryHelpActionStepPrev.style.width = primaryHelpActionStepPrevWidth + 'px';
+      $(primaryHelpActionStepPrev).removeClass('primary-help-action-step-prev--hidden');
       $(primaryHelpActions).removeClass('primary-help-actions--start');
       $(primaryHelpActions).addClass('primary-help-actions--finish');
       focusingPrimaryControl(primaryHelpPhone);
