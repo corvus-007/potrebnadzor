@@ -5,8 +5,8 @@
 .primary__rows {
   @include container();
   min-height: 100vh;
-  padding-top: 50px;
-  padding-bottom: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,9 +19,10 @@
   min-height: 50px;
   max-width: 100%;
   // background-color: #7de;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 
   &:last-child {
+    margin-top: 1em;
     margin-bottom: 0;
   }
 }

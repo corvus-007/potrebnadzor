@@ -25,16 +25,16 @@
         </div>
         <div class="primary__row">
           <div class="primary-help">
-            <form class="form-primary-help" id="form-primary-help" name="form-primary-help" action="">
+            <form class="form-primary-help" id="form-primary-help" name="form-primary-help" action="/">
               <div class="primary-help-steps">
                 <div class="primary-help-step">
                   <div class="primary-help-step__headline">
                     <label class="primary-help-step__title" for="field-help-message">Нужна помощь юриста?</label>
-                    <p class="primary-help-step__subtitle">Опишите проблему и мы поможем с ее решением</p>
+                    <p class="primary-help-step__subtitle">Опишите проблему и мы поможем с ее решением. <a class="js-trigger-inline-popup primary-help-step__trigger-description" href="#popup-description-help">Хотите узнать как?</a></p>
                   </div>
                   <textarea
                   class="form-primary-help__textarea form-primary-help__control form-control"
-                  name="help-message"
+                  name="help_message"
                   id="field-help-message"
                   placeholder="Например, меня обманул продавец бытовой техники и продал мне сломанный товар"
                   required></textarea>
@@ -49,7 +49,7 @@
                     <input
                     class="form-primary-help__input form-primary-help__control form-control"
                     type="tel"
-                    name="help-phone"
+                    name="help_phone"
                     id="field-help-phone"
                     required>
                   </div>
@@ -68,7 +68,7 @@
                   <span class="button__text hidden-tablet-down">Назад</span>
                 </button>
                 <div class="primary-help-actions__slider">
-                <button class="primary-help-action primary-help-actions__slide primary-help-action-step-finish button--has-icon" type="submit" form="form-primary-help" disabled>
+                <button class="primary-help-action primary-help-actions__slide primary-help-action-step-finish button--has-icon" name="new_request" type="submit" form="form-primary-help" disabled>
                     <span class="button__text">Отправить</span>
                     <svg class="svg-icon button__icon">
                       <use xlink:href="images/symbols.svg#mail"></use>
@@ -95,9 +95,50 @@
       </div>
     </div>
     <main class="main">
+      <div class="container">
+      <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Дал даль lorem мир рукопись проектах свое, языком путь но, собрал то если толку реторический ручеек свою за инициал знаках.</p>
+        <ul>
+          <li>Предпродажная уборка квартир</li>
+          <li>Уборка квартир, домов, офисов, торговых помещений</li>
+          <li>
+            <ol>
+              <li>Предпродажная уборка квартир</li>
+              <li>Уборка квартир, домов, офисов, торговых помещений</li>
+              <li>Генеральная уборка квартир</li>
+              <li>Ежедневная комплексная уборка</li>
+              <li>Выезд домработницы</li>
+            </ol>
+          </li>
+          <li>Ежедневная комплексная уборка</li>
+          <li>Выезд домработницы</li>
+        </ul>
 
+        <ol>
+          <li>Уборка квартир, домов, офисов, торговых помещений</li>
+          <li>Выезд домработницы</li>
+          <li>Предпродажная уборка квартир</li>
+          <li>Генеральная уборка квартир</li>
+          <li>Выезд домработницы</li>
+          <li>Ежедневная комплексная уборка</li>
+          <li>Выезд домработницы</li>
+          <li>Предпродажная уборка квартир</li>
+          <li>Ежедневная комплексная уборка</li>
+          <li>Генеральная уборка квартир</li>
+          <li>Ежедневная комплексная уборка</li>
+          <li>Уборка квартир, домов, офисов, торговых помещений</li>
+          <li>Предпродажная уборка квартир</li>
+        </ol>
+      </div>
     </main>
   </div>
+
+  <div id="popup-description-help" class="popup popup-description-help mfp-hide">
+    <div class="popup__title">Заголовок</div>
+    <div class="popup__body">
+      <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Оксмокс послушавшись пояс злых ipsum повстречался всеми меня рекламных, все первую осталось букв вдали всемогущая, своего что собрал жаренные родного!</p>
+    </div>
+  </div>
+
   @@include('blocks/main-footer.html')
 </body>
 </html>

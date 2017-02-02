@@ -1,0 +1,29 @@
+.custom-ol,
+ol:not([class]) {
+  $dimensions: 30px;
+
+  // margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: ol-list;
+
+  & > li {
+    position: relative;
+    padding-left: $dimensions + 10;
+
+    &::before {
+      counter-increment: ol-list;
+      content: counter(ol-list);
+      position: absolute;
+      left: 0;
+      top: -0.2em;
+      width: $dimensions;
+      height: $dimensions;
+      line-height: $dimensions;
+      box-sizing: border-box;
+      text-align: center;
+      border-radius: 50%;
+      // background-color: $accent-color;
+    }
+  }
+}

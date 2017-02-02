@@ -22,3 +22,7 @@
 .primary-help-step__subtitle {
 
 }
+
+.primary-help-step__trigger-description {
+  @include dotted-link();
+}

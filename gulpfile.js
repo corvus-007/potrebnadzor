@@ -42,11 +42,11 @@ gulp.task('style', function() {
       ])
     )
     .pipe(gulp.dest('build/'))
-    .pipe(minify())
-    .pipe(rename({
-      suffix: '-min'
-    }))
-    .pipe(gulp.dest('build/'))
+    // .pipe(minify())
+    // .pipe(rename({
+    //   suffix: '-min'
+    // }))
+    // .pipe(gulp.dest('build/'))
     .pipe(browserSync.stream());
 });
 
@@ -72,10 +72,10 @@ gulp.task('fileinclude', function() {
 
 gulp.task('images', function() {
   return gulp.src('build/images/**/*.{png,jpg,gif}')
-    .pipe(imagemin([
-      imagemin.optipng({optimizationLevel: 3}),
-      imagemin.jpegtran({progressive: true})
-    ]))
+    // .pipe(imagemin([
+    //   imagemin.optipng({optimizationLevel: 3}),
+    //   imagemin.jpegtran({progressive: true})
+    // ]))
     .pipe(gulp.dest('build/images'));
 });
 
